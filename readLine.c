@@ -16,5 +16,5 @@ char *readLine(void){
         }
     }
     return (line);
-
+    
 }

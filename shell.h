@@ -20,4 +20,6 @@ char **splitLine(char *line);
 /* executeArgs.c */
 int executeArgs(char **args);
 
+/* pwd.c*/
+int pwd();
 #endif
