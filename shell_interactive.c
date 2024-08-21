@@ -1,14 +1,16 @@
 #include "shell.h"
 
+
+
 void shell_interactive(void){
     char *line;
     char **args;
     int status=-1;
     do{
         printf("simple_prompt$ ");
-        line = read_line();
-        args = split_line();
-        status = execute_args(args);
+        line = readLine();
+        args = splitLine(line);
+        status = executeArgs(args);
 
         free(line);
         free(args);
