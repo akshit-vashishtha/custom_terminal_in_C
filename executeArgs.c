@@ -6,6 +6,10 @@ int executeArgs(char **args) {
     if (strcmp(args[0], "pwd") == 0) {
         return pwd();  // Execute `pwd` command directly
     }
+    if (strcmp(args[0], "exit") == 0) {
+        printf("Exiting terminal\n");
+        return 0;  // Execute `exit` command directly
+    }
 
     // For testing, just print the tokens
     for (int i = 0; args[i] != NULL; i++) {
