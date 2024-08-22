@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include<string.h>
+#include <dirent.h>
 
 /*---PROTOTYPES---*/
 /* shell_interactive.c */
@@ -25,6 +26,9 @@ int pwd();
 
 /*cd.c*/
 int cd(char **args);
+
+/*ls.c*/
+int ls();
 
 
 #endif

@@ -13,9 +13,14 @@ int executeArgs(char **args) {
     if(strcmp(args[0], "cd")==0){
         return cd(args);
     }
+
+    if(strcmp(args[0], "ls")==0){
+        return ls();
+    }
     // For testing, just print the tokens
     for (int i = 0; args[i] != NULL; i++) {
         printf("arg[%d]: %s\n", i, args[i]);
     }
+    printf("No such command found\n");
     return -1;  // Continue running
 }

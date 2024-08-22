@@ -1,1 +1,7 @@
-// gcc -o my_shell main.c shell_interactive.c readLine.c splitLine.c executeArgs.c pwd.c cd.c
+// gcc -o my_shell main.c shell_interactive.c readLine.c splitLine.c executeArgs.c pwd.c cd.c ls.c
+
+list of commands
+pwd
+cd
+exit
+ls
