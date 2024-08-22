@@ -23,5 +23,8 @@ int executeArgs(char **args);
 /* pwd.c*/
 int pwd();
 
+/*cd.c*/
+int cd(char **args);
+
 
 #endif

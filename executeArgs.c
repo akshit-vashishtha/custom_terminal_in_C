@@ -10,7 +10,9 @@ int executeArgs(char **args) {
         printf("Exiting terminal\n");
         return 0;  // Execute `exit` command directly
     }
-
+    if(strcmp(args[0], "cd")==0){
+        return cd(args);
+    }
     // For testing, just print the tokens
     for (int i = 0; args[i] != NULL; i++) {
         printf("arg[%d]: %s\n", i, args[i]);
