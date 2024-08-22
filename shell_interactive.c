@@ -7,7 +7,9 @@ void shell_interactive(void){
     char **args;
     int status=-1;
     do{
-        printf("simple_prompt$ ");
+        char wd[100];
+        getcwd(wd,sizeof(wd));
+        printf("%s$ ",wd);
         line = readLine();
         args = splitLine(line);
         status = executeArgs(args);
