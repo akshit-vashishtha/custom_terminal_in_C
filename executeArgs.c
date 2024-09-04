@@ -30,6 +30,12 @@ int executeArgs(char **args) {
     if(strcmp(args[0],"delfile")==0){
         return delfile(args);
     }
+    if(strcmp(args[0],"display")==0){
+        return display(args);
+    }
+    if(strcmp(args[0],"copy")==0){
+        return display(args);
+    }
 
     // For testing, just print the tokens
     for (int i = 0; args[i] != NULL; i++) {

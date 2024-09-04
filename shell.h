@@ -44,4 +44,8 @@ int newfile(char **args);
 
 int delfile(char **args);
 
+int display(char** args);
+
+int copy(char** args);
+
 #endif
