@@ -1,8 +1,9 @@
-// gcc -o my_shell main.c shell_interactive.c readLine.c splitLine.c executeArgs.c pwd.c cd.c ls.c newdir.c deldir.c
+// gcc -o my_shell main.c shell_interactive.c readLine.c splitLine.c executeArgs.c pwd.c cd.c ls.c newdir.c deldir.c newfile.c delfile.c
 
 list of commands
 pwd
 cd
 exit
 ls
-newdir.c
+newdir
+deldir

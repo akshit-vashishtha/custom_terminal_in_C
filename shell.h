@@ -11,6 +11,8 @@
 #include <sys/types.h>
 #include <direct.h>
 #include <errno.h>
+#include <fcntl.h>
+#include <utime.h>
 
 /*---PROTOTYPES---*/
 /* shell_interactive.c */
@@ -37,5 +39,9 @@ int ls();
 int newdir(char **args);
 
 int deldir(char **args);
+
+int newfile(char **args);
+
+int delfile(char **args);
 
 #endif

@@ -24,6 +24,13 @@ int executeArgs(char **args) {
     if(strcmp(args[0], "deldir")==0){
         return deldir(args);
     }
+    if(strcmp(args[0],"newfile")==0){
+        return newfile(args);
+    }
+    if(strcmp(args[0],"delfile")==0){
+        return delfile(args);
+    }
+
     // For testing, just print the tokens
     for (int i = 0; args[i] != NULL; i++) {
         printf("arg[%d]: %s\n", i, args[i]);
