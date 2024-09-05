@@ -39,6 +39,9 @@ int executeArgs(char **args) {
     if(strcmp(args[0],"clearcontents")==0){
         return clearcontents(args);
     }
+    if(strcmp(args[0],"clear")==0){
+        return clear();
+    }
 
     // For testing, just print the tokens
     for (int i = 0; args[i] != NULL; i++) {

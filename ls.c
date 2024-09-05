@@ -8,7 +8,9 @@ int ls() {
     DIR *d;
     struct dirent *dir;
     
-    // Open the current directory
+    // inside the struct dirent there are many data member out of which we are using 2 namely -> d_type (tells whether current entry if directory or file) and d_name (tells name of file or directory)
+
+    // Open current directory
     d = opendir(".");
     if (d == NULL) {
         perror("opendir");
@@ -16,26 +18,24 @@ int ls() {
     }
     
     printf("Folders:\n");
-    // First, list all folders
+    //list all folders
     while ((dir = readdir(d)) != NULL) {
-        if (dir->d_type == DT_DIR) {
-            printf("%s\t", dir->d_name);
+        if (dir->d_type == DT_DIR) { //DT_DIR means directory
+            printf("%s\t", dir->d_name); //note max length of dname is 255
         }
     }
 
-    // Reset the directory stream
-    rewinddir(d);
+    rewinddir(d); // resetting directory stream to the beggining of the directory to read files 
 
     printf("\nFiles:\n");
-    // Then, list all files
+    // list all files
     while ((dir = readdir(d)) != NULL) {
-        if (dir->d_type == DT_REG) {
+        if (dir->d_type == DT_REG) { //DT_REG means regular file
             printf("%s\t", dir->d_name);
         }
     }
 
     printf("\n");
-    // Close the directory
     closedir(d);
 
     return -1;

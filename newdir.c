@@ -16,5 +16,5 @@ int newdir(char **args) {
     }
 
     printf("Directory created successfully\n");
-    return -1;  // Return 0 on success
+    return -1; 
 }

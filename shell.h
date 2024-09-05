@@ -50,4 +50,6 @@ int copy(char **args);
 
 int clearcontents(char **args);
 
+int clear();
+
 #endif
