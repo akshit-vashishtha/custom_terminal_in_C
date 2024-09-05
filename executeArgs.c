@@ -34,7 +34,10 @@ int executeArgs(char **args) {
         return display(args);
     }
     if(strcmp(args[0],"copy")==0){
-        return display(args);
+        return copy(args);
+    }
+    if(strcmp(args[0],"clearcontents")==0){
+        return clearcontents(args);
     }
 
     // For testing, just print the tokens
