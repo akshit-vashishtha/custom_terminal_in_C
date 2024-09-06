@@ -5,7 +5,6 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include <string.h>
 #include <dirent.h>
 #include <sys/stat.h>
 #include <sys/types.h>
@@ -13,6 +12,7 @@
 #include <errno.h>
 #include <fcntl.h>
 #include <utime.h>
+#include <string.h>
 
 /*---PROTOTYPES---*/
 /* shell_interactive.c */
@@ -51,5 +51,9 @@ int copy(char **args);
 int clearcontents(char **args);
 
 int clear();
+
+int print(char** args);
+
+int rname(char **args);
 
 #endif

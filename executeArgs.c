@@ -42,6 +42,12 @@ int executeArgs(char **args) {
     if(strcmp(args[0],"clear")==0){
         return clear();
     }
+    if(strcmp(args[0],"print")==0){
+        return print(args);
+    }
+    if(strcmp(args[0],"rename")==0){
+        return rname(args);
+    }    
 
     // For testing, just print the tokens
     for (int i = 0; args[i] != NULL; i++) {

@@ -1,4 +1,4 @@
-gcc -o my_shell main.c shell_interactive.c readLine.c splitLine.c executeArgs.c pwd.c cd.c ls.c newdir.c deldir.c newfile.c delfile.c display.c copy.c clearcontents.c clear.c
+gcc -o my_shell main.c shell_interactive.c readLine.c splitLine.c executeArgs.c pwd.c cd.c ls.c newdir.c deldir.c newfile.c delfile.c display.c copy.c clearcontents.c clear.c print.c rename.c
 
 list of commands
 pwd
@@ -12,3 +12,5 @@ delfile
 display
 copy
 clearcontents
+print
+rename
