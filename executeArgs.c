@@ -1,58 +1,40 @@
 #include "shell.h"
 
+typedef int (*command_func)(char **args);  // Define a function pointer type
+
+struct {
+    char *name;
+    command_func func;
+} command_table[] = {
+    {"pwd", (command_func)pwd},
+    {"exit", (command_func)exit},  // No args needed for `exit`
+    {"cd", cd},
+    {"ls", (command_func)ls},  // No args needed for `ls`
+    {"newdir", newdir},
+    {"deldir", deldir},
+    {"newfile", newfile},
+    {"delfile", delfile},
+    {"display", display},
+    {"copy", copy},
+    {"clearcontents", clearcontents},
+    {"clear", (command_func)clear},  // No args needed for `clear`
+    {"print", print},
+    {"rename", rname},
+    {"move", mv}
+};
+
 int executeArgs(char **args) {
-    if(args[0]==NULL) return -1; // empty command was passed
+    if (args[0] == NULL) return -1; 
 
-    if (strcmp(args[0], "pwd") == 0) {
-        return pwd();  // Execute `pwd` command directly
-    }
-    if (strcmp(args[0], "exit") == 0) {
-        printf("Exiting terminal\n");
-        return 0;  // Execute `exit` command directly
-    }
-    if(strcmp(args[0], "cd")==0){
-        return cd(args);
+    // Loop through the command table to find and execute the corresponding function
+    int num_commands = sizeof(command_table) / sizeof(command_table[0]);
+    for (int i = 0; i < num_commands; i++) {
+        if (strcmp(args[0], command_table[i].name) == 0) {
+            return command_table[i].func(args);  // Call the function if the command matches
+        }
     }
 
-    if(strcmp(args[0], "ls")==0){
-        return ls();
-    }
-
-    if(strcmp(args[0], "newdir")==0){
-        return newdir(args);
-    }
-    if(strcmp(args[0], "deldir")==0){
-        return deldir(args);
-    }
-    if(strcmp(args[0],"newfile")==0){
-        return newfile(args);
-    }
-    if(strcmp(args[0],"delfile")==0){
-        return delfile(args);
-    }
-    if(strcmp(args[0],"display")==0){
-        return display(args);
-    }
-    if(strcmp(args[0],"copy")==0){
-        return copy(args);
-    }
-    if(strcmp(args[0],"clearcontents")==0){
-        return clearcontents(args);
-    }
-    if(strcmp(args[0],"clear")==0){
-        return clear();
-    }
-    if(strcmp(args[0],"print")==0){
-        return print(args);
-    }
-    if(strcmp(args[0],"rename")==0){
-        return rname(args);
-    }   
-    if(strcmp(args[0],"move")==0){
-        return mv(args);
-    } 
-
-    // For testing, just print the tokens
+    // For testing, print the tokens if no command was found
     for (int i = 0; args[i] != NULL; i++) {
         printf("arg[%d]: %s\n", i, args[i]);
     }
