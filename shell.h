@@ -56,4 +56,6 @@ int print(char** args);
 
 int rname(char **args);
 
+int mv(char **args);
+
 #endif
