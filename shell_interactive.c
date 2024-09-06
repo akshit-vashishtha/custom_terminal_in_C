@@ -1,7 +1,5 @@
 #include "shell.h"
 
-
-
 void shell_interactive(void){
     char *line;
     char **args;

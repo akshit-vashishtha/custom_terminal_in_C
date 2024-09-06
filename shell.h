@@ -58,4 +58,8 @@ int rname(char **args);
 
 int mv(char **args);
 
+int ex();
+
+int history();
+
 #endif
