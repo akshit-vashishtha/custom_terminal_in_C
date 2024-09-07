@@ -22,6 +22,7 @@ struct {
     {"rename", rname},
     {"move", mv},
     {"history",history},
+    {"getinfo",getinfo}
 };
 
 int executeArgs(char **args) {
@@ -40,7 +41,7 @@ int executeArgs(char **args) {
 
 void logArgsToFile(char** args) {
     //'a' open file in append mode
-    FILE *file = fopen("history.txt", "a");
+    FILE *file = fopen("D:/custom_terminal_in_c/history.txt", "a");
     if (file == NULL) {
         perror("Error opening file");
         exit(1);

@@ -2,7 +2,7 @@
 
 int ex(){
     FILE *file = fopen("history.txt", "w");
-    close(file);
+    fclose(file);
     printf("EXITING TERMINAL\n");
     return 0;
 }

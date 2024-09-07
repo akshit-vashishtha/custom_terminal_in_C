@@ -62,4 +62,10 @@ int ex();
 
 int history();
 
+int getinfo(char** args);
+
+
+
+void logArgsToFile(char** args);
+
 #endif
